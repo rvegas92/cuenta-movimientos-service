@@ -8,4 +8,5 @@ public interface CuentaService {
 	CuentaDTO getTermSearch(String search);
 	CuentaDTO saveCuenta(CuentaDTO cuentaDto);
     void deleteCuenta(Long id);
+    String getReporte(String fechaInicio, String fechaFin, Long personaId);
 }

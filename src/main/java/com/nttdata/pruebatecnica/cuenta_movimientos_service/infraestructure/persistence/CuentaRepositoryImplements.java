@@ -2,9 +2,7 @@ package com.nttdata.pruebatecnica.cuenta_movimientos_service.infraestructure.per
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.stereotype.Repository;
-
 import com.nttdata.pruebatecnica.cuenta_movimientos_service.domain.entity.Cuenta;
 import com.nttdata.pruebatecnica.cuenta_movimientos_service.domain.mapper.CuentaMapper;
 import com.nttdata.pruebatecnica.cuenta_movimientos_service.domain.model.CuentaDTO;
@@ -65,6 +63,12 @@ public class CuentaRepositoryImplements implements CuentaRepository{
 	        throw new ResourceNotFoundException("Recurso no encontrado");
 	    }
 	    return this.cuentaMapper.toCuentaDTO(cuentas.get(0));
+	}
+
+	@Override
+	public String getReporte(String fechaInicio, String fechaFin, Long personaId) {
+		// TODO Auto-generated method stub
+		return this.cuentaRepositorySqlServer.getReporte(fechaInicio, fechaFin, personaId);
 	}
 
 }

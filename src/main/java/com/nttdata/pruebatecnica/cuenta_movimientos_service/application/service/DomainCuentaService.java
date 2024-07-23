@@ -42,4 +42,10 @@ public class DomainCuentaService implements CuentaService{
 		return this.cuentaRepository.getTermSearch(search);
 	}
 
+	@Override
+	public String getReporte(String fechaInicio, String fechaFin, Long personaId) {
+		// TODO Auto-generated method stub
+		return this.cuentaRepository.getReporte(fechaInicio, fechaFin, personaId);
+	}
+
 }

@@ -73,7 +73,7 @@ public class CuentaController {
     @GetMapping("/buscar")
     public ResponseEntity<CuentaDTO> getCuentaBuscar(@RequestParam String search) {
         log.info("Searching for cuenta with term: {}", search);
-        CuentaDTO cuentaDTO = this.cuentaService.getTermSearch(search);
+        CuentaDTO cuentaDTO = this.cuentaService.getTermSearch("%"+search+"%");
         return new ResponseEntity<>(cuentaDTO, HttpStatus.OK);
     }
     

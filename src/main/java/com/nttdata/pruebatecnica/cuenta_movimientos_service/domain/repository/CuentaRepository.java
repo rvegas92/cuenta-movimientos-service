@@ -10,4 +10,5 @@ public interface CuentaRepository {
 	CuentaDTO getTermSearch(String search);
 	CuentaDTO saveCuenta (CuentaDTO clienteDto);
     void deleteCuenta(Long id);
+    String getReporte(String fechaInicio, String fechaFin, Long personaId);
 }

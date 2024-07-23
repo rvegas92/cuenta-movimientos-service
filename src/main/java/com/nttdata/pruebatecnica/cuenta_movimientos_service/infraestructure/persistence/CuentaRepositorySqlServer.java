@@ -12,4 +12,9 @@ public interface CuentaRepositorySqlServer extends JpaRepository<Cuenta, Long>{
 	
 	@Query(nativeQuery = true, value = "select c.* from cuenta c where c.numero_cuenta = ?1 or c.tipo_cuenta = ?1")
     List<Cuenta> findBySearchTerm(@Param("search") String search);
+	
+	@Query(nativeQuery = true, value = "{ call SP_REPORTE(?1, ?2, ?3) }")
+	String getReporte(@Param("fechaInicio") String fechaInicio, 
+			@Param("fechaFin") String fechaFin,
+			@Param("personaId") Long personaId);
 }

@@ -1,7 +1,12 @@
 package com.nttdata.pruebatecnica.cuenta_movimientos_service.infraestructure.exceptions;
 
 public class ResourceNotFoundException extends RuntimeException {
-    public ResourceNotFoundException() {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public ResourceNotFoundException() {
         super();
     }
 
