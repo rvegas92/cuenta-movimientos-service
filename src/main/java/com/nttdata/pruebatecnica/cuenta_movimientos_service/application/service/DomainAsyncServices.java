@@ -19,7 +19,7 @@ public class DomainAsyncServices {
     public CompletableFuture<CuentaDTO> callBuscarEndpoint(String cliente) {
         return webClientBuilder.build()
                 .get()
-                .uri("http://localhost:8095/clientes/buscar?search=" + cliente)
+                .uri("https://clientepersonaservice-1c3339b4c909.herokuapp.com/clientes/buscar?search=" + cliente)
                 .retrieve()
                 .bodyToMono(CuentaDTO.class)
                 .toFuture();
